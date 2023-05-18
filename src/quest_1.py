@@ -13,7 +13,6 @@ def tam2(img, num: int = 4):
     img_res = np.zeros((nr, nc, ch), dtype=np.uint8)
 
     if num > 2:
-        print(f"num: {num}")
         img_res = tam2(img_res, int(num / 2))
     else:
         return img_res
@@ -23,8 +22,6 @@ img = cv.imread(FRUIT1)
 print("\nImagem Original\n")
 print(np.array(img))
 
-img_result = tam2(img, 4)
+img_result = tam2(img, 32)
 print("\nImagem resultante\n")
 print(np.array(img_result))
-cv.imshow("Resultado", img_result)
-cv.waitKey(0)
