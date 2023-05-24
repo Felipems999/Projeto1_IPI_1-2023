@@ -1,3 +1,9 @@
+#######################################
+##       Felipe Moura da Silva       ##
+##       16/0119740                  ##
+##       1/2023                      ##
+#######################################
+
 from unittest import result
 import numpy as np
 import cv2 as cv

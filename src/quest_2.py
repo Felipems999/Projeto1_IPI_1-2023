@@ -1,3 +1,9 @@
+#######################################
+##       Felipe Moura da Silva       ##
+##       16/0119740                  ##
+##       1/2023                      ##
+#######################################
+
 import cv2 as cv
 import numpy as np
 from config import CAR, CROWD, UNIVERSITY, RESULT_DIR
