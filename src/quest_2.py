@@ -14,11 +14,14 @@ img_uni = cv.imread(UNIVERSITY)
 def compare_powerlaw(
     img, g1: float = 0.5, g2: float = 0.3, g3: float = 1.5, name: str = "none"
 ):
-    img = img / 255.0
+    img = img / 255.0  # Normaliza a imagem para o intervalo entre 0 e 1
+
+    # Aplica power-law para cada valor de gamma
     img_g1 = np.power(img, g1)
     img_g2 = np.power(img, g2)
     img_g3 = np.power(img, g3)
 
+    # Salva as imagens resultantes
     cv.imwrite(
         RESULT_DIR + f"q2_1_powerlaw_gamma_0,5_{name}.png",
         (img_g1 * 255).astype(np.uint8),
@@ -33,6 +36,8 @@ def compare_powerlaw(
     )
 
 
+# Aplica a função compare_powerlaw() em car.png, crowd.png e university.png com nomes personalizados
+compare_powerlaw(img_car, name="car")
 compare_powerlaw(img_car, name="car")
 compare_powerlaw(img_crowd, name="crowd")
 compare_powerlaw(img_uni, name="university")
@@ -41,15 +46,12 @@ compare_powerlaw(img_uni, name="university")
 ##       ITEM 2       ##
 ########################
 
+# Aplica a equalização de histograma em car.png, crowd.png e university.png, convertidas para escala de cinza
 car_equ = cv.equalizeHist(cv.cvtColor(img_car, cv.COLOR_BGR2GRAY))
 crowd_equ = cv.equalizeHist(cv.cvtColor(img_crowd, cv.COLOR_BGR2GRAY))
 uni_equ = cv.equalizeHist(cv.cvtColor(img_uni, cv.COLOR_BGR2GRAY))
 
+# Salva as imagens resultantes na pasta de resultados
 cv.imwrite(RESULT_DIR + "q2_1_car_equalize.png", car_equ)
 cv.imwrite(RESULT_DIR + "q2_1_crowd_equalize.png", crowd_equ)
 cv.imwrite(RESULT_DIR + "q2_1_university_equalize.png", uni_equ)
-
-# cv.imshow("histograma equalizado", car_equ)
-
-# cv.waitKey(0)
-# cv.destroyAllWindows()
