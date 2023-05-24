@@ -1,4 +1,5 @@
 IMG_DIR = "src/imagens/"
+RESULT_DIR = "/home/felipems999/Docs/IPI/trabalho_1/resultados/"
 
 CAR = IMG_DIR + "car.png"
 CROWD = IMG_DIR + "crowd.png"
