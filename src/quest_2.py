@@ -36,3 +36,20 @@ def compare_powerlaw(
 compare_powerlaw(img_car, name="car")
 compare_powerlaw(img_crowd, name="crowd")
 compare_powerlaw(img_uni, name="university")
+
+########################
+##       ITEM 2       ##
+########################
+
+car_equ = cv.equalizeHist(cv.cvtColor(img_car, cv.COLOR_BGR2GRAY))
+crowd_equ = cv.equalizeHist(cv.cvtColor(img_crowd, cv.COLOR_BGR2GRAY))
+uni_equ = cv.equalizeHist(cv.cvtColor(img_uni, cv.COLOR_BGR2GRAY))
+
+cv.imwrite(RESULT_DIR + "q2_1_car_equalize.png", car_equ)
+cv.imwrite(RESULT_DIR + "q2_1_crowd_equalize.png", crowd_equ)
+cv.imwrite(RESULT_DIR + "q2_1_university_equalize.png", uni_equ)
+
+# cv.imshow("histograma equalizado", car_equ)
+
+# cv.waitKey(0)
+# cv.destroyAllWindows()
